@@ -8,15 +8,11 @@ import Container from "react-bootstrap/Container"
 import Alert from "react-bootstrap/Alert"
 
 async function loginUser(credentials) {
-  const url = "http://localhost:3000/api/oauth/token"
-  // concat(process.env.API_URL, process.env.API_LOGIN)
+  const url = `${process.env.REACT_APP_API_URL}${process.env.REACT_APP_API_LOGIN}`
   const oauthData = {
-    grant_type: "password",
-    client_id: "NqwmhIGNGQ4SWyDJTG2fOVJY24hcMYCEDSuBBMWSmTA",
-    client_secret: "QksQC2WucpkSpadqOWtfJlASLvksOkGMNR5Br80JFCs",
-    // 'grant_type': process.env.OAUTH_GRANT_TYPE,
-    // 'client_id': process.env.OAUTH_CLIENT_ID,
-    // 'client_secret': process.env.OAUTH_CLIENT_SECRET
+    grant_type: process.env.REACT_APP_OAUTH_GRANT_TYPE,
+    client_id: process.env.REACT_APP_OAUTH_CLIENT_ID,
+    client_secret: process.env.REACT_APP_OAUTH_CLIENT_SECRET,
   }
   const headers = {
     headers: {

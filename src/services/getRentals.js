@@ -2,7 +2,7 @@ import axios from "axios"
 
 export async function getRentals() {
   const user = JSON.parse(sessionStorage.getItem("user"))
-  const url = "http://localhost:3000/api/rentals"
+  const url = `${process.env.REACT_APP_API_URL}${process.env.REACT_APP_API_RENTALS}`
 
   const headers = {
     headers: {
